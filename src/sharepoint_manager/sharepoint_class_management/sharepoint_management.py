@@ -15,7 +15,7 @@ from office365.sharepoint.lists.list_creation_information import ListCreationInf
 from office365.sharepoint.lists.list_template_type import ListTemplateType
 from pydantic import BaseModel
 
-from sharepoint_management.sharepoint_functions.sharepoint_funcions import (
+from sharepoint_manager.sharepoint_functions.sharepoint_funcions import (
     add_new_item,
     create_folder,
     create_list,
