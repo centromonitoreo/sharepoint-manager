@@ -15,7 +15,7 @@ from office365.sharepoint.lists.list_creation_information import ListCreationInf
 from office365.sharepoint.lists.list_template_type import ListTemplateType
 from pydantic import BaseModel
 
-from sharepoint_manager.sharepoint_functions.sharepoint_functions import (
+from sharepoint_management.sharepoint_functions.sharepoint_funcions import (
     add_new_item,
     create_folder,
     create_list,
@@ -338,6 +338,7 @@ class SharepointManagement:
             item (ListItem): Item to be deleted.
         """
         delete_item_list(self.ctx, item)
+
 
     def delete_folder_with_contents(self, relative_path: str, folder_name: str) -> None:
         """
