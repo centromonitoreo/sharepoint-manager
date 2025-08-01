@@ -495,7 +495,6 @@ def upload_file_sharepoint(
         file_name = file_upload.split("\\")[-1]
     target_folder.upload_file(file_name, file_content).execute_query()
 
-
 def delete_item_list(ctx: ClientContext, item: ListItem) -> None:
     """
     Deletes a specific SharePoint item.
@@ -539,4 +538,5 @@ def delete_folder_with_contents(ctx: ClientContext, folder_path: str) -> None:
     # Delete the folder itself
     folder.delete_object()
     ctx.execute_query()
+
 
