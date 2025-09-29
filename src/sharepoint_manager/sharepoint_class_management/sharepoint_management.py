@@ -22,6 +22,7 @@ from sharepoint_manager.sharepoint_functions.functions import (
     get_connection_folder,
     get_connection_list,
     get_connection_sharepoint,
+    get_connection_sharepoint_token,
     get_email_user,
     get_info_list,
     is_sharepoint_folder,
@@ -66,6 +67,8 @@ class SharepointManagement:
         """
         self.username = username
         self.password = password
+        self.client_id = client_id
+        self.client_secret = client_secret
         self.url = url
         self.ctx = None
         self.list_conexion = {}
@@ -76,12 +79,12 @@ class SharepointManagement:
         """
         The get_conexion_sharepoint method is responsible for obtaining
         a connection to SharePoint by calling the
-        get_connection_sharepoint function with the necessary parameters
-        (self.url, self.username, self.password). The connection object
+        get_connection_sharepoint_token function with the necessary parameters
+        (self.url, self.client_id, self.client_secret). The connection object
         returned by the function is then assigned to the ctx attribute
         of the class instance.
         """
-        self.ctx = get_connection_sharepoint(self.url, self.username, self.password)
+        self.ctx = get_connection_sharepoint_token(self.url, self.client_id, self.client_secret)
 
     def get_conexion_list(self, list_name) -> None:
         """
