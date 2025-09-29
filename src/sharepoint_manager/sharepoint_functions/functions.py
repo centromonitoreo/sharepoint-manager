@@ -77,6 +77,36 @@ def get_connection_sharepoint(url: str, username: str, password: str) -> ClientC
     else:
         print(f"The connection to {url} failed")
 
+def get_connection_sharepoint_token(url: str, client_id: str, client_secret: str) -> None:
+    """
+    Establish a connection to a SharePoint site using client credentials.
+
+    This function authenticates against a SharePoint Online site by 
+    creating a `ClientContext` object with the provided client ID and 
+    client secret. Once the context is successfully authenticated, 
+    it can be used to interact with SharePoint resources.
+
+    Args:
+        url (str): The SharePoint site URL to connect to.
+        client_id (str): The client ID of the registered Azure AD application.
+        client_secret (str): The client secret associated with the application.
+
+    Returns:
+        ClientContext: An authenticated SharePoint client context object 
+        that can be used to access and manipulate SharePoint resources.
+
+    Raises:
+        ClientRequestException: If authentication fails or the request 
+            to SharePoint cannot be executed.
+        Exception: For any unexpected errors during the connection setup.
+    """
+    credentials = ClientCredential(client_id, client_secret)
+    ctx = ClientContext(url).with_credentials(credentials)
+    web = ctx.web
+    ctx.load(web)
+    ctx.execute_query()
+    return ctx
+
 
 def get_connection_list(ctx: ClientContext, list_name: str) -> ListSharepoint:
     """
