@@ -1,7 +1,7 @@
 import io
 import os
 from typing import List, Union
-
+from office365.runtime.auth.client_credential import ClientCredential
 from office365.runtime.auth.authentication_context import AuthenticationContext
 from office365.sharepoint.attachments.attachmentfile_collection import (
     AttachmentFileCollection,
