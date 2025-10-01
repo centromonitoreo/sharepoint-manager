@@ -55,7 +55,7 @@ class Information(BaseModel):
 class SharepointManagement:
     """Sharepoint connection and control class"""
 
-    def __init__(self, username: str, password: str, url: str) -> None:
+        def __init__(self, username: str, password: str, url: str, client_id:str, client_secret:str) -> None:
         """Constructor of the SharepointConnection class
 
         Args:
