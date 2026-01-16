@@ -55,25 +55,25 @@ class Information(BaseModel):
 class SharepointManagement:
     """Sharepoint connection and control class"""
 
-        def __init__(self, username: str, password: str, url: str, client_id:str, client_secret:str) -> None:
+    def __init__(self, username: str, password: str, url: str, client_id:str, client_secret:str) -> None:
         """Constructor of the SharepointConnection class
-
+    
         Args:
             username (str): Email of the sharepoint user.
-
+    
             password (str): Outlook mail authentication password.
-
+    
             url (str): Url of the sharepoint to which you want to make the connection.
         """
-            self.username = username
-            self.password = password
-            self.client_id = client_id
-            self.client_secret = client_secret
-            self.url = url
-            self.ctx = None
-            self.list_conexion = {}
-            self.folder_conexion = {}
-            self.get_conexion_sharepoint()
+        self.username = username
+        self.password = password
+        self.client_id = client_id
+        self.client_secret = client_secret
+        self.url = url
+        self.ctx = None
+        self.list_conexion = {}
+        self.folder_conexion = {}
+        self.get_conexion_sharepoint()
 
     def get_conexion_sharepoint(self) -> None:
         """
