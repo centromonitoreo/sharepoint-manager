@@ -65,15 +65,15 @@ class SharepointManagement:
 
             url (str): Url of the sharepoint to which you want to make the connection.
         """
-        self.username = username
-        self.password = password
-        self.client_id = client_id
-        self.client_secret = client_secret
-        self.url = url
-        self.ctx = None
-        self.list_conexion = {}
-        self.folder_conexion = {}
-        self.get_conexion_sharepoint()
+            self.username = username
+            self.password = password
+            self.client_id = client_id
+            self.client_secret = client_secret
+            self.url = url
+            self.ctx = None
+            self.list_conexion = {}
+            self.folder_conexion = {}
+            self.get_conexion_sharepoint()
 
     def get_conexion_sharepoint(self) -> None:
         """
