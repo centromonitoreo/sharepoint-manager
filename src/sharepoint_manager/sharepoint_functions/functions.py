@@ -1,6 +1,6 @@
 import io
 import os
-from typing import List, Union
+from typing import List, Union, Any
 
 from office365.runtime.auth.authentication_context import AuthenticationContext
 from office365.sharepoint.attachments.attachmentfile_collection import (
@@ -33,7 +33,7 @@ class Information(BaseModel):
     """
 
     column: str
-    value: str
+    value: Any
 
 
 class SharepointErrors(Exception):
